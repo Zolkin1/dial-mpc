@@ -252,3 +252,11 @@ AMENT_IGNORE
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,c++,python,ros2
 
 dial_mpc_ws/
+
+/.idea
+
+/multi_contact/unitree_g1_basic/
+/multi_contact/unitree_h1_gap/
+/multi_contact/unitree_h1_stairs/
+/multi_contact/unitree_g1_jump_down/
+/multi_contact/unitree_g1_stairs/

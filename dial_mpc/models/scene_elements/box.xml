@@ -1,0 +1,11 @@
+<mujoco model="stairs">
+    <asset>
+        <material name="box_material" shininess="0.1" specular="0.5" roughness="0.3" />
+    </asset>
+
+    <worldbody>
+        <body name="box" pos="0 0 0.25">
+          <geom type="box" contype="4" conaffinity="1" size="0.5 0.5 0.25" friction="0.5" material="box_material" rgba="0.87 0.72 0.53 1.0"/>
+        </body>
+    </worldbody>
+</mujoco>
