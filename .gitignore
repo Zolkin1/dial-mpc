@@ -254,3 +254,7 @@ AMENT_IGNORE
 dial_mpc_ws/
 
 /.idea
+
+/multi_contact/unitree_g1_basic/
+/multi_contact/unitree_h1_gap/
+/multi_contact/unitree_h1_stairs/
