@@ -27,7 +27,7 @@ import dial_mpc.envs as dial_envs
 # jax.config.update("jax_platform_name", "cpu")
 
 @dataclass
-class UnitreeG1BasicEnvConfig(BaseEnvConfig):
+class UnitreeG1JumpDownEnvConfig(BaseEnvConfig):
     kp: Union[float, jax.Array] = field(default_factory=lambda: jnp.array(
         [
             200.0,
@@ -101,8 +101,8 @@ class UnitreeG1BasicEnvConfig(BaseEnvConfig):
     gait: str = "jog"
 
 
-class UnitreeG1BasicEnv(BaseEnv):
-    def __init__(self, config: UnitreeG1BasicEnvConfig):
+class UnitreeG1JumpDownEnv(BaseEnv):
+    def __init__(self, config: UnitreeG1JumpDownEnvConfig):
         super().__init__(config)
 
         # some body indices
@@ -183,8 +183,8 @@ class UnitreeG1BasicEnv(BaseEnv):
         )
         # self.joint_range = self.physical_joint_range
 
-    def make_system(self, config: UnitreeG1BasicEnvConfig) -> System:
-        model_path = get_model_path("unitree_g1", "basic_scene.xml")
+    def make_system(self, config: UnitreeG1JumpDownEnvConfig) -> System:
+        model_path = get_model_path("unitree_g1", "jump_down_scene.xml")
         sys = mjcf.load(model_path)
         sys = sys.tree_replace({"opt.timestep": config.timestep})
         return sys
@@ -330,7 +330,7 @@ class UnitreeG1BasicEnv(BaseEnv):
             + reward_ang_vel * 1.0
             + reward_height * 0.5
             + reward_energy * 0.01
-            + reward_alive * 0.1
+            + reward_alive * 0.0
         )
         # reward = (0)
 
@@ -411,5 +411,5 @@ class UnitreeG1BasicEnv(BaseEnv):
         new_ang_vel_cmd = jnp.array([0.0, 0.0, ang_vel_yaw[0]])
         return new_lin_vel_cmd, new_ang_vel_cmd
 
-brax_envs.register_environment("unitree_g1_basic", UnitreeG1BasicEnv)
-dial_envs.register_config("unitree_g1_basic", UnitreeG1BasicEnvConfig)
+brax_envs.register_environment("unitree_g1_jump_down", UnitreeG1JumpDownEnv)
+dial_envs.register_config("unitree_g1_jump_down", UnitreeG1JumpDownEnvConfig)

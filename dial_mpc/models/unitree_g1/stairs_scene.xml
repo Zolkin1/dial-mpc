@@ -1,6 +1,7 @@
 <mujoco model="g1 scene">
-<!--  <include file="mjx_g1_29dof.xml"/>-->
   <include file="mjx_g1_29dof_v2.xml"/>
+  <include file="../scene_elements/stairs.xml"/>
+
 
   <statistic center="0.0 0.0 0.5" extent="1.5"/>
 

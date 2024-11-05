@@ -1,6 +1,7 @@
 <mujoco model="g1 scene">
-<!--  <include file="mjx_g1_29dof.xml"/>-->
   <include file="mjx_g1_29dof_v2.xml"/>
+  <include file="../scene_elements/box.xml"/>
+
 
   <statistic center="0.0 0.0 0.5" extent="1.5"/>
 
@@ -24,11 +25,11 @@
 
   <keyframe>
     <key name="home"
-    qpos="0 0 0.77
-          0 0 0 0
-          -0.3 0 0 0.52 -0.23 0
-          -0.3 0 0 0.52 -0.23 0
-          0 0 0 0.2
-          0 0 0 0.2"/>
+    qpos="0 0 1.27
+        0 0 0 0
+        -0.3 0 0 0.52 -0.23 0
+        -0.3 0 0 0.52 -0.23 0
+        0 0 0 0.2
+        0 0 0 0.2"/>
   </keyframe>
 </mujoco>
