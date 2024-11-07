@@ -69,8 +69,8 @@ class MBDPI:
 
         # node to u
         self.ctrl_dt = 0.02
-        self.step_us = jnp.linspace(0, self.ctrl_dt * args.Hsample, args.Hsample + 1)
-        self.step_nodes = jnp.linspace(0, self.ctrl_dt * args.Hsample, args.Hnode + 1)
+        self.step_us = jnp.linspace(0, self.ctrl_dt * args.Hsample, args.Hsample + 1)       # Time when a control is applied (spline is interpolated)
+        self.step_nodes = jnp.linspace(0, self.ctrl_dt * args.Hsample, args.Hnode + 1)      # Times where nodes are
         self.node_dt = self.ctrl_dt * (args.Hsample) / (args.Hnode)
 
         # setup function
@@ -113,7 +113,7 @@ class MBDPI:
         # convert Y0s to us
         us = self.node2u_vvmap(Y0s)
 
-        # esitimate mu_0tm1
+        # estimate mu_0tm1
         rewss, pipeline_statess = self.rollout_us_vmap(state, us)
         rew_Ybar_i = rewss[-1].mean()
         qss = pipeline_statess.q

@@ -26,3 +26,11 @@ default_vy: 0.0
 default_vyaw: 0.0
 ramp_up_time: 1.0
 gait: jog
+
+# Contact extraction
+robot_name: unitree_g1
+scene_name: jump_down_scene.xml
+sim_leg_control: "Torque"
+visualize: False
+sim_dt: 0.02
+contact_bodies: ["right_ankle_roll_link", "left_ankle_roll_link"]

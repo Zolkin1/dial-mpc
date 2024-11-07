@@ -23,3 +23,7 @@ dial-mpc --config unitree_g1_stairs.yaml --custom-env unitree_g1_stairs_env
 ```
 dial-mpc --config unitree_g1_jump_down.yaml --custom-env unitree_g1_jump_down_env
 ```
+
+```
+python contact_extraction.py --config my_config --custom-env my_env
+```

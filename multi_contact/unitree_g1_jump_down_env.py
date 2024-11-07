@@ -320,7 +320,7 @@ class UnitreeG1JumpDownEnv(BaseEnv):
         reward_alive = 1.0 - state.done
         # reward
         reward = (
-            reward_gaits * 0.0 #0.1 #5.0
+            reward_gaits * 0.0
             + reward_air_time * 0.0
             + reward_pos * 0.0
             + reward_upright * 0.5
